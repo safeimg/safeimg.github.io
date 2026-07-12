@@ -1,301 +1,142 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SafeIMG | Safety-Oriented AI-Generated Image Detection</title>
-    <meta
-      name="description"
-      content="SafeIMG is a safety-oriented benchmark for AI-generated image detection in high-risk public and individual safety evidence scenarios."
-    />
-    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="site-header" data-header>
-      <a class="brand" href="#top" aria-label="SafeIMG home">
-        <span class="brand-mark">S</span>
-        <span>
-          <strong>SafeIMG</strong>
-          <small>Safety Benchmark</small>
-        </span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="site-nav" id="site-nav">
-        <a href="#overview">Overview</a>
-        <a href="#taxonomy">Taxonomy</a>
-        <a href="#annotations">Annotations</a>
-        <a href="#results">Results</a>
-        <a href="#release">Release</a>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#006b4f">
+  <meta name="description" content="A safety-oriented benchmark for AI-generated image detection in high-risk visual evidence scenarios.">
+  <meta property="og:title" content="AI-generated Images Challenge Visual Trust in High-risk Scenarios">
+  <meta property="og:description" content="Benchmarking AI-generated image detection in high-risk visual evidence scenarios.">
+  <meta property="og:image" content="og.png">
+  <title>SafeIMG — Visual Trust in High-risk Scenarios</title>
+  <link rel="icon" type="image/jpeg" href="assets/safeimg-icon.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="SafeIMG home"><span class="brand-mark"><img src="assets/safeimg-icon.jpg" alt=""></span><span>SafeIMG</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#why">Overview</a><a href="#benchmark">Benchmark</a><a href="#leaderboard">Leaderboard</a><a href="#resources">Resources</a>
       </nav>
+      <div class="header-actions"><a href="https://github.com/wangrongsheng" target="_blank" rel="noreferrer">GitHub</a><a class="header-cta" href="https://huggingface.co/wangrongsheng" target="_blank" rel="noreferrer">Get dataset</a></div>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-label="SafeIMG introduction">
-        <div class="hero-inner reveal">
-          <p class="eyebrow">Southeast University Safety AI Benchmark</p>
-          <h1>SafeIMG</h1>
-          <p class="hero-subtitle">Safety-Oriented AI-Generated<br class="mobile-break" /> Image Detection</p>
-          <p class="hero-copy">
-            A diagnostic benchmark for detecting AI-generated images that may be
-            interpreted as visual evidence in high-risk public and individual safety contexts.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#release">Get the Benchmark</a>
-            <a class="button secondary" href="#results">View Findings</a>
+    <section class="hero" id="top">
+      
+      <div class="paper-title"><span>Paper title:</span>AI-generated Images Challenge Visual Trust in High-risk Scenarios</div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>When seeing is no longer <em>believing.</em></h1>
+          <p class="hero-deck"><strong>SafeIMG</strong> evaluates whether today’s detectors can recognize AI-generated images when they imitate visual evidence used in high-risk decisions.</p>
+          <div class="resource-row" aria-label="Project resources">
+            <a class="resource-link resource-link--accent" href="#citation">Paper <span aria-hidden="true">↗</span></a>
+            <a class="resource-link" href="https://huggingface.co/wangrongsheng" target="_blank" rel="noreferrer">Dataset <span aria-hidden="true">↗</span></a>
+            <a class="resource-link" href="https://github.com/wangrongsheng" target="_blank" rel="noreferrer">Code <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="hero-meta" aria-label="Project highlights">
-            <span>GPT Image 2</span>
-            <span>12 risk categories</span>
-            <span>Localized forgery cues</span>
-            <span>Where + why evaluation</span>
+          <div class="authors" aria-label="Authors">
+            <span>Yizhi Wang,</span><span>Yichen Xiao,</span><span>Linan Yue,</span><span>Weibo Gao,</span><span>Yichao Du,</span><span>Pengfei Fang,</span><span>Shimin Di,</span><span>Min-Ling Zhang</span>
           </div>
         </div>
-      </section>
 
-      <section class="stats-strip" aria-label="SafeIMG benchmark summary">
-        <div class="metric">
-          <strong>2</strong>
-          <span>risk domains</span>
+        <div class="hero-evidence" aria-label="Example SafeIMG evidence">
+          <div class="evidence-toolbar"><span class="live-dot"></span><span>EVIDENCE / P1</span><span class="toolbar-status">UNDER REVIEW</span></div>
+          <button class="hero-image-button js-open-image" data-image="cases/p1.png" data-title="Natural Disasters" data-domain="Public safety / P1" aria-label="Enlarge the evidence example"><img src="cases/p1.png" alt="A SafeIMG case showing a generated snowstorm news image and commonsense annotations"></button>
+          <div class="evidence-note evidence-note--one"><span>01</span><strong>Temporal conflict</strong><small>July vs. heavy blizzard</small></div>
+          <div class="evidence-note evidence-note--two"><span>02</span><strong>Logical inconsistency</strong><small>Temperature ordering</small></div>
+          <div class="evidence-caption"><span>Human-annotated evidence</span><span>Click to inspect ↗</span></div>
         </div>
-        <div class="metric">
-          <strong>12</strong>
-          <span>high-risk categories</span>
-        </div>
-        <div class="metric">
-          <strong>5</strong>
-          <span>construction stages</span>
-        </div>
-        <div class="metric">
-          <strong>3</strong>
-          <span>evaluation questions</span>
-        </div>
-      </section>
+      </div>
 
-      <section class="section intro-grid" id="overview">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Why SafeIMG</p>
-          <h2>AI-generated images are becoming high-risk evidence, not just synthetic content.</h2>
-          <p>
-            Existing benchmarks mainly test generic real/fake detection. SafeIMG asks a
-            sharper safety question: can detectors recognize generated images when they
-            imitate evidence used in real-world decisions?
-          </p>
-        </div>
-        <div class="challenge-list reveal">
-          <article>
-            <span>01</span>
-            <h3>Recent generators</h3>
-            <p>Samples are built around high-realism image generation rather than older GAN-era artifacts.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Evidence-like scenarios</h3>
-            <p>Images resemble visual records about disasters, accidents, transactions, chats, and identity claims.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Diagnostic annotations</h3>
-            <p>Each suspicious region is paired with a cue type and textual explanation for where-and-why evaluation.</p>
-          </article>
-        </div>
-      </section>
+      <div class="institution-strip" aria-label="Author affiliations">
+        <div class="institution"><img src="assets/seu-logo.png" alt="Southeast University emblem"><span>Southeast University</span></div>
+        <div class="institution institution--polyu"><img src="assets/polyu-logo.jpg" alt="The Hong Kong Polytechnic University emblem"><span>The Hong Kong Polytechnic University</span></div>
+        <div class="institution institution--whu"><img src="assets/whu-logo.png" alt="Wuhan University emblem"><span>Wuhan University</span></div>
+      </div>
+    </section>
 
-      <section class="section feature-band">
-        <div class="feature-copy reveal">
-          <p class="eyebrow">Benchmark Design</p>
-          <h2>From risk taxonomy to evidence-level labels.</h2>
-          <p>
-            SafeIMG organizes image generation around public and individual safety risks,
-            builds concrete scenario spaces, generates evidence-like samples with GPT Image 2,
-            and annotates suspicious regions with human-perceived forgery cues.
-          </p>
-        </div>
-        <div class="overview-map reveal" aria-label="SafeIMG benchmark design map">
-          <div class="map-node">Risk Taxonomy</div>
-          <div class="map-arrow"></div>
-          <div class="map-node">Scenario Space</div>
-          <div class="map-arrow"></div>
-          <div class="map-node">GPT Image 2</div>
-          <div class="map-arrow"></div>
-          <div class="map-node">Human Cues</div>
-          <div class="map-output">
-            <strong>Evaluation</strong>
-            <span>image-level detection</span>
-            <span>region localization</span>
-            <span>cue explanation</span>
-          </div>
-        </div>
-      </section>
+    <section class="metrics-band" aria-label="Benchmark summary">
+      <div><strong>12</strong><span>high-risk scenarios</span></div><div><strong>2</strong><span>safety domains</span></div><div><strong>7</strong><span>artifact families</span></div><div><strong>23.1%</strong><span>average VLM detection accuracy</span></div>
+    </section>
 
-      <section class="section taxonomy-section" id="taxonomy">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Risk-Oriented Taxonomy</p>
-          <h2>Organized by evidentiary function and safety consequence.</h2>
-          <p>
-            Categories are grouped by how an image may influence public judgment,
-            personal safety, financial trust, identity claims, or social order.
-          </p>
-        </div>
-        <div class="taxonomy-controls reveal" role="tablist" aria-label="Taxonomy filters">
-          <button class="filter active" type="button" data-filter="all">All categories</button>
-          <button class="filter" type="button" data-filter="public">Public safety</button>
-          <button class="filter" type="button" data-filter="individual">Individual safety</button>
-        </div>
-        <div class="taxonomy-grid" data-taxonomy></div>
-      </section>
+    <section class="section section--intro" id="why">
+      <div class="section-index">01 / WHY SAFEIMG</div>
+      <div class="why-heading">
+        <h2>Existing benchmarks test synthetic images. SafeIMG tests <em>synthetic evidence.</em></h2>
+        <p>Modern generators can now produce images that appear to document real events, identities, transactions, and private records. In these settings, a detection error can affect public judgment, financial trust, identity verification, legal interpretation, or personal reputation.</p>
+      </div>
+      <blockquote class="research-question">Can a detector identify AI-generated images when they imitate evidence used in high-stakes real-world decisions?</blockquote>
+      <div class="gap-list" aria-label="Limitations of existing benchmarks">
+        <article><span>01</span><div><p class="gap-label">Generator gap</p><h3>Earlier generators no longer represent frontier realism.</h3><p>Many established benchmarks were built with GANs or early diffusion systems. Strong performance on those sources does not guarantee generalization to images produced by current models such as GPT Image 2.</p></div></article>
+        <article><span>02</span><div><p class="gap-label">Scenario gap</p><h3>General images do not represent safety-critical evidence.</h3><p>Natural scenes, artworks, and scientific figures are valuable test domains, but they do not directly measure the harms caused when synthetic images imitate disaster reports, transaction proofs, private communications, or identity endorsements.</p></div></article>
+        <article><span>03</span><div><p class="gap-label">Diagnostic gap</p><h3>Overall accuracy cannot reveal where a detector is unsafe.</h3><p>A single score hides large differences across risk domains, evidence types, and dissemination conditions. SafeIMG diagnoses category-level failures, explanation alignment, and robustness after compression, cropping, screenshots, and re-encoding.</p></div></article>
+      </div>
+      <div class="safeimg-answer">
+        <div><span>SAFEIMG RESPONDS WITH</span><h3>12 high-risk evidence categories, localized human annotations, and realistic propagation tests.</h3></div>
+        <p><strong>Annotation emphasis.</strong> Beyond visible face and text artifacts, annotators prioritize subtle commonsense conflicts—temporal, physical, quantitative, and contextual errors that may remain difficult even as generation quality improves.</p>
+      </div>
+    </section>
 
-      <section class="section pipeline-section">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Construction Pipeline</p>
-          <h2>Five stages make the benchmark traceable and auditable.</h2>
-        </div>
-        <div class="pipeline-steps reveal" aria-label="SafeIMG construction stages">
-          <div><strong>1</strong><span>Risk taxonomy</span></div>
-          <div><strong>2</strong><span>Scenario space</span></div>
-          <div><strong>3</strong><span>Prompt construction</span></div>
-          <div><strong>4</strong><span>GPT Image 2 generation</span></div>
-          <div><strong>5</strong><span>Human annotation</span></div>
-        </div>
-        <figure class="paper-figure reveal">
-          <img src="./assets/pipeline.png" alt="Construction pipeline of the SafeIMG benchmark." />
-        </figure>
-      </section>
+    <section class="section section--benchmark" id="benchmark">
+      <div class="section-heading"><div><div class="section-index">02 / BENCHMARK TAXONOMY</div><h2>Evidence across public and personal safety.</h2></div><p>Select a category to explore its evidence-like images. The gallery loops automatically and pauses when you inspect it.</p></div>
+      <div class="domain-label"><span class="domain-dot domain-dot--public"></span>Public safety <b>8 categories</b></div>
+      <div class="taxonomy-grid taxonomy-grid--public" id="public-taxonomy"></div>
+      <div class="domain-label"><span class="domain-dot domain-dot--personal"></span>Personal safety <b>4 categories</b></div>
+      <div class="taxonomy-grid taxonomy-grid--personal" id="personal-taxonomy"></div>
+      <div class="category-stage">
+        <div class="category-stage-copy"><span id="category-domain">Public safety / P1</span><h3 id="category-title">Natural Disasters</h3><p id="category-risk"></p><small>Sample images are repeated as temporary gallery content and can be replaced as the dataset grows.</small></div>
+        <div class="gallery-window"><div class="gallery-track" id="gallery-track"></div></div>
+      </div>
+    </section>
 
-      <section class="section annotations-section" id="annotations">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Evidence-Level Annotation</p>
-          <h2>SafeIMG evaluates not only whether, but also where and why.</h2>
-          <p>
-            A single image may contain multiple suspicious cues. SafeIMG pairs each cue
-            with a localized region and a textual explanation to support interpretable diagnosis.
-          </p>
-        </div>
-        <div class="annotation-layout reveal">
-          <figure class="annotation-image">
-            <img src="./assets/case.png" alt="SafeIMG case study examples with human and model judgments." />
-          </figure>
-          <div class="annotation-panel">
-            <div class="annotation-tabs" role="tablist" aria-label="Annotation cue examples">
-              <button class="cue-tab active" type="button" data-cue="commonsense">Commonsense</button>
-              <button class="cue-tab" type="button" data-cue="text">Text</button>
-              <button class="cue-tab" type="button" data-cue="physics">Physics</button>
-            </div>
-            <div class="cue-card" data-cue-card>
-              <p class="cue-type">Commonsense conflict</p>
-              <h3>Scene logic can fail even when the image looks realistic.</h3>
-              <p>
-                Evidence-like generated images often require high-level judgment:
-                object relationships, crowd behavior, emergency context, and plausible
-                interactions with the scene.
-              </p>
-            </div>
-            <div class="annotation-note">
-              Human annotations are designed as diagnostic evidence, not as prompts for generating deceptive content.
-            </div>
-          </div>
-        </div>
-      </section>
+    <section class="section pipeline-section" id="construction">
+      <div class="section-heading"><div><div class="section-index">03 / CONSTRUCTION</div><h2>From risk taxonomy to diagnostic evidence.</h2></div><p>Five traceable stages connect the safety question to sample-level evidence and human explanations.</p></div>
+      <div class="pipeline">
+        <article><span>01</span><div class="step-mark"></div><h3>Risk-oriented taxonomy</h3><p>Organize images by evidentiary function and safety consequence.</p></article>
+        <article><span>02</span><div class="step-mark"></div><h3>Scenario space</h3><p>Specify content, media forms, and risk focus for every category.</p></article>
+        <article><span>03</span><div class="step-mark"></div><h3>Prompt construction</h3><p>Build detailed 5W+1H scenarios with category-specific constraints.</p></article>
+        <article><span>04</span><div class="step-mark"></div><h3>Image generation</h3><p>Generate realistic evidence-like images with GPT Image 2.</p></article>
+        <article><span>05</span><div class="step-mark"></div><h3>Human annotation</h3><p>Locate suspicious regions and explain why the evidence is implausible.</p></article>
+      </div>
+    </section>
 
-      <section class="section results-section" id="results">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Empirical Findings</p>
-          <h2>Current detectors remain unreliable in high-risk visual contexts.</h2>
-          <p>
-            SafeIMG reveals a gap between general visual understanding, synthetic-image
-            detection, human judgment, explanation alignment, and robustness after dissemination.
-          </p>
-        </div>
-        <div class="finding-grid reveal">
-          <article class="finding">
-            <strong>49.5%</strong>
-            <span>best VLM detection accuracy</span>
-            <p>General-purpose VLMs are unstable across risk domains and evidence types.</p>
-          </article>
-          <article class="finding">
-            <strong>33.1%</strong>
-            <span>best specialized detector accuracy</span>
-            <p>Older detector artifacts transfer poorly to GPT Image 2 style samples.</p>
-          </article>
-          <article class="finding">
-            <strong>81.7%</strong>
-            <span>human evaluation accuracy</span>
-            <p>Humans perform better, yet manual review still misses difficult generated evidence.</p>
-          </article>
-          <article class="finding">
-            <strong>29.8%</strong>
-            <span>human cues covered by AI</span>
-            <p>Model rationales often miss the suspicious cues annotated by humans.</p>
-          </article>
-        </div>
+    <section class="section inspect-section" id="examples">
+      <div class="section-index">04 / INSPECT THE EVIDENCE</div>
+      <div class="inspect-heading"><h2>Where a verdict ends, <em>a diagnosis begins.</em></h2><div class="mode-switch" role="group" aria-label="Choose explanation source"><button class="active" data-reason="human">Human annotation</button><button data-reason="model">Model rationale</button></div></div>
+      <div class="inspect-grid">
+        <button class="inspect-image js-open-image" data-image="cases/p1.png" data-title="Natural Disasters" data-domain="Public safety / P1" aria-label="Enlarge annotated example"><img src="cases/p1.png" alt="Annotated SafeIMG P1 example"><span class="scan-line"></span></button>
+        <div class="reason-panel" id="reason-panel"></div>
+      </div>
+    </section>
 
-        <div class="chart-grid">
-          <figure class="chart-card reveal">
-            <img src="./assets/radial.png" alt="Radial detection performance chart for SafeIMG categories." />
-            <figcaption>Detection performance varies sharply across public and individual safety categories.</figcaption>
-          </figure>
-          <figure class="chart-card reveal">
-            <img src="./assets/scatter_break.png" alt="Trade-off plot between AI-image accuracy and real-image accuracy." />
-            <figcaption>VLMs show a clear trade-off between AI-image sensitivity and real-image preservation.</figcaption>
-          </figure>
-          <figure class="chart-card reveal">
-            <img src="./assets/human_issue.png" alt="Human issue hit-rate chart across forgery cue types." />
-            <figcaption>Models cover local cues better than commonsense and physics-level anomalies.</figcaption>
-          </figure>
-          <figure class="chart-card reveal">
-            <img src="./assets/radar.png" alt="Radar chart comparing detector performance across SafeIMG dimensions." />
-            <figcaption>Different detector families expose complementary weaknesses across evidence categories.</figcaption>
-          </figure>
-          <figure class="chart-card reveal">
-            <img src="./assets/model_comparison.png" alt="Model comparison under network propagation perturbations." />
-            <figcaption>Network propagation and compression degrade detection reliability.</figcaption>
-          </figure>
-        </div>
-      </section>
+    <section class="section leaderboard-section" id="leaderboard">
+      <div class="section-heading"><div><div class="section-index">05 / LEADERBOARD</div><h2>What current models miss.</h2></div><p>Detection accuracy (%) on SafeIMG. Sort the original paper data by any category to expose capability gaps.</p></div>
+      <div class="leaderboard-controls"><div class="filter-tabs" role="group" aria-label="Filter model type"><button class="active" data-group="All">All</button><button data-group="VLM">VLM</button><button data-group="Detector">Detector</button><button data-group="Human">Human</button></div><label>Rank by <select id="metric-select"></select></label></div>
+      <div class="table-wrap"><table><thead id="leaderboard-head"></thead><tbody id="leaderboard-body"></tbody></table></div>
+      <div class="finding-strip"><span>KEY FINDING</span><p>Strong visual understanding does not automatically translate into reliable synthetic-image detection.</p><strong>Best VLM overall: 49.5%</strong></div>
+    </section>
 
-      <section class="section release-section" id="release">
-        <div class="release-copy reveal">
-          <p class="eyebrow">Responsible Benchmark Release</p>
-          <h2>Designed for safety research and community evaluation.</h2>
-          <p>
-            SafeIMG should help researchers evaluate visual authenticity systems without
-            turning the website into a source of reusable deceptive evidence. Public previews
-            should remain downsampled, watermarked, and framed as benchmark examples.
-          </p>
-        </div>
-        <div class="release-actions reveal">
-          <a class="release-link" href="#" aria-label="Paper link placeholder">
-            <span>Paper</span>
-            <strong>Coming soon</strong>
-          </a>
-          <a class="release-link" href="#" aria-label="Dataset link placeholder">
-            <span>Dataset</span>
-            <strong>Controlled access</strong>
-          </a>
-          <a class="release-link" href="#" aria-label="Code link placeholder">
-            <span>Code</span>
-            <strong>Evaluation scripts</strong>
-          </a>
-          <a class="release-link" href="mailto:lnyue@seu.edu.cn">
-            <span>Contact</span>
-            <strong>lnyue@seu.edu.cn</strong>
-          </a>
-        </div>
-      </section>
-    </main>
+    <section class="section propagation-section">
+      <div class="propagation-copy"><div class="section-index">06 / REAL-WORLD ROBUSTNESS</div><h2>Evidence rarely stays pristine.</h2><p>Compression, cropping, screenshots, and social-media re-encoding substantially reduce detection accuracy.</p><div class="propagation-steps"><span>Original</span><b>→</b><span>Compressed</span><b>→</b><span>Screenshot</span><b>→</b><span>Re-encoded</span></div></div>
+      <div class="propagation-visual"><img src="assets/radial.png" alt="Category-level model performance on SafeIMG"></div>
+    </section>
 
-    <footer class="site-footer">
-      <p>
-        SafeIMG: AI-generated Images Challenge Visual Trust in High-risk Scenarios.
-      </p>
-      <p>
-        School of Computer Science and Engineering, Southeast University.
-      </p>
-    </footer>
+    <section class="resources-section" id="resources"><div class="resources-inner"><div><div class="section-index section-index--light">07 / RESOURCES</div><h2>Build more reliable visual trust with SafeIMG.</h2></div><div class="resource-list"><a class="resource-link" href="#citation">Read the paper <span>↗</span></a><a class="resource-link" href="https://huggingface.co/wangrongsheng" target="_blank" rel="noreferrer">Download dataset <span>↗</span></a><a class="resource-link" href="https://github.com/wangrongsheng" target="_blank" rel="noreferrer">Browse code <span>↗</span></a><a class="resource-link" href="#benchmark">Explore taxonomy <span>↗</span></a></div></div></section>
 
-    <script src="./app.js"></script>
-  </body>
+    <section class="citation-section" id="citation"><div><span class="citation-label">CITATION</span><h2>SafeIMG</h2><p>AI-generated Images Challenge Visual Trust in High-risk Scenarios</p></div><pre><code>@article{wang2026safeimg,
+  title={AI-generated Images Challenge Visual Trust in High-risk Scenarios},
+  author={Wang, Yizhi and Xiao, Yichen and Yue, Linan and others},
+  year={2026}
+}</code></pre></section>
+
+    <footer><div class="brand brand--footer"><span class="brand-mark"><img src="assets/safeimg-icon.jpg" alt=""></span><span>SafeIMG</span></div><p>A safety-oriented benchmark for AI-generated image detection.</p><span>© 2026 SafeIMG Research Team</span></footer>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged SafeIMG example" hidden>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close enlarged image">×</button>
+    <div class="lightbox-content"><div class="lightbox-meta"><span id="lightbox-domain"></span><strong id="lightbox-title"></strong></div><img id="lightbox-image" src="cases/p1.png" alt="Enlarged SafeIMG case"><p id="lightbox-copy"></p></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
