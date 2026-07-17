@@ -24,7 +24,7 @@
 
     <section class="hero" id="top">
       
-      <div class="paper-title"><span>Paper title:</span>AI-generated Images Challenge Visual Trust in High-risk Scenarios</div>
+      <div class="paper-title"><span>Paper title:</span><strong class="paper-title-text">AI-generated Images Challenge Visual Trust in High-risk Scenarios</strong></div>
       <div class="hero-grid">
         <div class="hero-copy">
           <h1>When seeing is no longer <em>believing.</em></h1>
@@ -40,11 +40,11 @@
         </div>
 
         <div class="hero-evidence" aria-label="Example SafeIMG evidence">
-          <div class="evidence-toolbar"><span class="live-dot"></span><span>EVIDENCE / P1</span><span class="toolbar-status">UNDER REVIEW</span></div>
-          <button class="hero-image-button js-open-image" data-image="cases/p1.png" data-title="Natural Disasters" data-domain="Public safety / P1" aria-label="Enlarge the evidence example"><img src="cases/p1.png" alt="A SafeIMG case showing a generated snowstorm news image and commonsense annotations"></button>
-          <div class="evidence-note evidence-note--one"><span>01</span><strong>Temporal conflict</strong><small>July vs. heavy blizzard</small></div>
-          <div class="evidence-note evidence-note--two"><span>02</span><strong>Logical inconsistency</strong><small>Temperature ordering</small></div>
-          <div class="evidence-caption"><span>Human-annotated evidence</span><span>Click to inspect ↗</span></div>
+          <div class="evidence-toolbar"><span class="live-dot"></span><span>EVIDENCE / P2</span></div>
+          <button class="hero-image-button js-open-image" data-image="cases/case_study_P2.png" data-title="Traffic Accident" data-domain="Public safety / P2" data-copy="AI-generated accident evidence can distort public reporting, emergency response, and liability assessment." aria-label="Enlarge the traffic-accident evidence example"><img src="cases/case_study_P2.png" alt="A SafeIMG case showing an AI-generated Boston traffic-accident broadcast with human annotations"></button>
+          <div class="evidence-note evidence-note--one"><span>01</span><strong>Incomplete crash logic</strong><small>Severe front damage, but no collision object</small></div>
+          <div class="evidence-note evidence-note--two"><span>02</span><strong>Unsupported streetlight</strong><small>Lower support base is missing</small></div>
+          <div class="evidence-caption"><span>Human-annotated evidence</span></div>
         </div>
       </div>
 
@@ -84,7 +84,7 @@
       <div class="domain-label"><span class="domain-dot domain-dot--personal"></span>Personal safety <b>4 categories</b></div>
       <div class="taxonomy-grid taxonomy-grid--personal" id="personal-taxonomy"></div>
       <div class="category-stage">
-        <div class="category-stage-copy"><span id="category-domain">Public safety / P1</span><h3 id="category-title">Natural Disasters</h3><p id="category-risk"></p><small>Sample images are repeated as temporary gallery content and can be replaced as the dataset grows.</small></div>
+        <div class="category-stage-copy"><span id="category-domain">Public safety / P1</span><h3 id="category-title">Natural Disasters</h3><p id="category-risk"></p></div>
         <div class="gallery-window"><div class="gallery-track" id="gallery-track"></div></div>
       </div>
     </section>
@@ -96,7 +96,7 @@
         <article><span>02</span><div class="step-mark"></div><h3>Scenario space</h3><p>Specify content, media forms, and risk focus for every category.</p></article>
         <article><span>03</span><div class="step-mark"></div><h3>Prompt construction</h3><p>Build detailed 5W+1H scenarios with category-specific constraints.</p></article>
         <article><span>04</span><div class="step-mark"></div><h3>Image generation</h3><p>Generate realistic evidence-like images with GPT Image 2.</p></article>
-        <article><span>05</span><div class="step-mark"></div><h3>Human annotation</h3><p>Locate suspicious regions and explain why the evidence is implausible.</p></article>
+        <article><span>05</span><div class="step-mark"></div><h3>Human annotation</h3><p>Locate and explain implausible evidence.</p></article>
       </div>
     </section>
 
@@ -104,7 +104,7 @@
       <div class="section-index">04 / INSPECT THE EVIDENCE</div>
       <div class="inspect-heading"><h2>Where a verdict ends, <em>a diagnosis begins.</em></h2><div class="mode-switch" role="group" aria-label="Choose explanation source"><button class="active" data-reason="human">Human annotation</button><button data-reason="model">Model rationale</button></div></div>
       <div class="inspect-grid">
-        <button class="inspect-image js-open-image" data-image="cases/p1.png" data-title="Natural Disasters" data-domain="Public safety / P1" aria-label="Enlarge annotated example"><img src="cases/p1.png" alt="Annotated SafeIMG P1 example"><span class="scan-line"></span></button>
+        <button class="inspect-image js-open-image" data-image="cases/case_study_P2.png" data-title="Traffic Accident" data-domain="Public safety / P2" data-copy="AI-generated accident evidence can distort public reporting, emergency response, and liability assessment." aria-label="Enlarge annotated traffic-accident example"><img src="cases/case_study_P2.png" alt="Annotated SafeIMG P2 traffic-accident example"><span class="scan-line"></span></button>
         <div class="reason-panel" id="reason-panel"></div>
       </div>
     </section>
@@ -130,7 +130,7 @@
 
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged SafeIMG example" hidden>
     <button class="lightbox-close" id="lightbox-close" aria-label="Close enlarged image">×</button>
-    <div class="lightbox-content"><div class="lightbox-meta"><span id="lightbox-domain"></span><strong id="lightbox-title"></strong></div><img id="lightbox-image" src="cases/p1.png" alt="Enlarged SafeIMG case"><p id="lightbox-copy"></p></div>
+    <div class="lightbox-content"><div class="lightbox-meta"><span id="lightbox-domain"></span><strong id="lightbox-title"></strong></div><img id="lightbox-image" src="cases/case_study_P2.png" alt="Enlarged SafeIMG case"><p id="lightbox-copy"></p></div>
   </div>
 
   <script src="script.js"></script>

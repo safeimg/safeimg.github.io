@@ -1,16 +1,32 @@
+const imageSet = (id, names) => names.map(name => `cases/data/${id}/${name}.webp`);
+const galleryImages = {
+  P1: imageSet("P1", ["0002", "0008", "0009", "0014", "0025", "0038", "0042", "0044", "0049", "0051"]),
+  P2: imageSet("P2", ["0142", "0145", "0151", "0155", "0156", "0157", "0158", "0160", "0213", "0215"]),
+  P3: imageSet("P3", ["0228", "0239", "0250", "0260", "0263", "0264", "0268", "0271", "0276", "0278"]),
+  P4: imageSet("P4", ["0341", "0345", "0347", "0348", "0349", "0351", "0352", "0389", "0391", "0392"]),
+  P5: imageSet("P5", ["0398", "0408", "0417", "0418", "0426", "0427", "0428", "0430", "0488", "0489"]),
+  P6: imageSet("P6", ["0490", "0495", "0506", "0507", "0522", "0523", "0524", "0525", "0529", "0585"]),
+  P7: imageSet("P7", ["0590", "0591", "0592", "0597", "0604", "0611", "0618", "0678", "0679", "0680"]),
+  P8: imageSet("P8", ["0684", "0707", "0711", "0713", "0716", "0722", "0723", "0724", "0765", "0771"]),
+  I1: imageSet("I1", ["0781", "0786", "0810", "0814", "0819", "0820", "0821", "0845", "0852", "0854"]),
+  I2: imageSet("I2", ["0874", "0877", "0908", "0912", "0917", "0922", "0924", "0926", "0932", "0942"]),
+  I3: imageSet("I3", ["0970", "0974", "0975", "0980", "0992", "1000", "1015", "1019", "1021", "1034"]),
+  I4: imageSet("I4", ["1049", "1058", "1060", "1061", "1062", "1063", "1069", "1079", "1080", "1117"])
+};
+
 const categories = [
-  { id: "P1", title: "Natural Disasters", short: "Disaster evidence", domain: "Public safety", image: "cases/p1.png", risk: "Fabricated disaster evidence can exaggerate severity and mislead rescue decisions." },
-  { id: "P2", title: "Unrest & Attack", short: "Conflict evidence", domain: "Public safety", image: "cases/p2.png", risk: "Synthetic conflict imagery can distort public judgment and intensify social panic." },
-  { id: "P3", title: "Traffic Accidents", short: "Incident records", domain: "Public safety", image: "cases/p3.png", risk: "False accident records may interfere with public reporting and liability assessment." },
-  { id: "P4", title: "Fire & Explosion", short: "Emergency scenes", domain: "Public safety", image: "cases/p4.png", risk: "Convincing emergency scenes can fabricate the occurrence and scale of destructive events." },
-  { id: "P5", title: "Pollution & HazMat", short: "Hazard evidence", domain: "Public safety", image: "cases/p5.png", risk: "Generated hazard records may trigger fear or conceal contradictions in environmental evidence." },
-  { id: "P6", title: "Infrastructure Damage", short: "Structural evidence", domain: "Public safety", image: "cases/p6.png", risk: "Fabricated damage can misrepresent the safety status of buildings and public facilities." },
-  { id: "P7", title: "Crowd Safety", short: "Venue records", domain: "Public safety", image: "cases/p7.png", risk: "False crowd imagery can amplify perceived risk around gatherings and public venues." },
-  { id: "P8", title: "Public Health", short: "Health records", domain: "Public safety", image: "cases/p7.png", risk: "Synthetic health-event evidence can influence public trust and crisis response." },
-  { id: "I1", title: "Personal Emergencies", short: "Personal evidence", domain: "Personal safety", image: "cases/i1.png", risk: "Fabricated emergencies may be used to manipulate urgent personal decisions." },
-  { id: "I2", title: "Transaction Proofs", short: "Financial records", domain: "Personal safety", image: "cases/i2.png", risk: "Generated receipts and transaction records can support fraud or financial disputes." },
-  { id: "I3", title: "Communication Records", short: "Private records", domain: "Personal safety", image: "cases/i3.png", risk: "Synthetic chat records can falsify intent, identity, and interpersonal evidence." },
-  { id: "I4", title: "Identity Endorsement", short: "Identity evidence", domain: "Personal safety", image: "cases/i4.png", risk: "Fabricated endorsements can cause reputational, privacy, and property harm." }
+  { id: "P1", title: "Natural Disasters", short: "Disaster evidence", domain: "Public safety", images: galleryImages.P1, image: galleryImages.P1[0], risk: "Fabricated disaster evidence can exaggerate severity and mislead rescue decisions." },
+  { id: "P2", title: "Unrest & Attack", short: "Conflict evidence", domain: "Public safety", images: galleryImages.P2, image: galleryImages.P2[0], risk: "Synthetic conflict imagery can distort public judgment and intensify social panic." },
+  { id: "P3", title: "Traffic Accidents", short: "Incident records", domain: "Public safety", images: galleryImages.P3, image: galleryImages.P3[0], risk: "False accident records may interfere with public reporting and liability assessment." },
+  { id: "P4", title: "Fire & Explosion", short: "Emergency scenes", domain: "Public safety", images: galleryImages.P4, image: galleryImages.P4[0], risk: "Convincing emergency scenes can fabricate the occurrence and scale of destructive events." },
+  { id: "P5", title: "Pollution & HazMat", short: "Hazard evidence", domain: "Public safety", images: galleryImages.P5, image: galleryImages.P5[0], risk: "Generated hazard records may trigger fear or conceal contradictions in environmental evidence." },
+  { id: "P6", title: "Infrastructure Damage", short: "Structural evidence", domain: "Public safety", images: galleryImages.P6, image: galleryImages.P6[0], risk: "Fabricated damage can misrepresent the safety status of buildings and public facilities." },
+  { id: "P7", title: "Crowd Safety", short: "Venue records", domain: "Public safety", images: galleryImages.P7, image: galleryImages.P7[0], risk: "False crowd imagery can amplify perceived risk around gatherings and public venues." },
+  { id: "P8", title: "Public Health", short: "Health records", domain: "Public safety", images: galleryImages.P8, image: galleryImages.P8[0], risk: "Synthetic health-event evidence can influence public trust and crisis response." },
+  { id: "I1", title: "Personal Emergencies", short: "Personal evidence", domain: "Personal safety", images: galleryImages.I1, image: galleryImages.I1[0], risk: "Fabricated emergencies may be used to manipulate urgent personal decisions." },
+  { id: "I2", title: "Transaction Proofs", short: "Financial records", domain: "Personal safety", images: galleryImages.I2, image: galleryImages.I2[0], risk: "Generated receipts and transaction records can support fraud or financial disputes." },
+  { id: "I3", title: "Communication Records", short: "Private records", domain: "Personal safety", images: galleryImages.I3, image: galleryImages.I3[0], risk: "Synthetic chat records can falsify intent, identity, and interpersonal evidence." },
+  { id: "I4", title: "Identity Endorsement", short: "Identity evidence", domain: "Personal safety", images: galleryImages.I4, image: galleryImages.I4[0], risk: "Fabricated endorsements can cause reputational, privacy, and property harm." }
 ];
 
 const metrics = ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "I1", "I2", "I3", "I4", "Overall"];
@@ -57,11 +73,15 @@ function renderGallery() {
   document.querySelector("#category-domain").textContent = `${selectedCategory.domain} / ${selectedCategory.id}`;
   document.querySelector("#category-title").textContent = selectedCategory.title;
   document.querySelector("#category-risk").textContent = selectedCategory.risk;
-  galleryTrack.innerHTML = Array.from({ length: 6 }, (_, index) => `
-    <button class="gallery-item" data-gallery-image aria-label="Enlarge ${selectedCategory.title} example ${index + 1}">
-      <img src="${selectedCategory.image}" alt="${selectedCategory.title} SafeIMG annotated case">
-      <span>${selectedCategory.id} · CASE ${String(index + 1).padStart(2, "0")}</span>
-    </button>`).join("");
+  const loopImages = [...selectedCategory.images, ...selectedCategory.images];
+  galleryTrack.innerHTML = loopImages.map((image, index) => {
+    const caseNumber = index % selectedCategory.images.length + 1;
+    return `
+    <button class="gallery-item" data-gallery-image data-image="${image}" aria-label="Enlarge ${selectedCategory.title} example ${caseNumber}">
+      <img src="${image}" alt="${selectedCategory.title} SafeIMG case ${caseNumber}">
+      <span>${selectedCategory.id} · CASE ${String(caseNumber).padStart(2, "0")}</span>
+    </button>`;
+  }).join("");
   galleryTrack.style.animation = "none";
   void galleryTrack.offsetWidth;
   galleryTrack.style.animation = "";
@@ -77,16 +97,17 @@ function selectCategory(id) {
 document.querySelector("#benchmark").addEventListener("click", event => {
   const categoryButton = event.target.closest("[data-category]");
   if (categoryButton) selectCategory(categoryButton.dataset.category);
-  if (event.target.closest("[data-gallery-image]")) openLightbox(selectedCategory);
+  const galleryButton = event.target.closest("[data-gallery-image]");
+  if (galleryButton) openLightbox(selectedCategory, galleryButton.dataset.image);
 });
 
 const lightbox = document.querySelector("#lightbox");
-function openLightbox(category, image, title, domain) {
+function openLightbox(category, image, title, domain, copy) {
   const item = category || selectedCategory;
   document.querySelector("#lightbox-image").src = image || item.image;
   document.querySelector("#lightbox-title").textContent = title || item.title;
   document.querySelector("#lightbox-domain").textContent = domain || `${item.domain} / ${item.id}`;
-  document.querySelector("#lightbox-copy").textContent = item.risk;
+  document.querySelector("#lightbox-copy").textContent = copy || item.risk;
   lightbox.hidden = false;
   document.body.classList.add("modal-open");
 }
@@ -97,7 +118,7 @@ function closeLightbox() {
 }
 
 document.querySelectorAll(".js-open-image").forEach(button => button.addEventListener("click", () => {
-  openLightbox(categories.find(item => item.image === button.dataset.image), button.dataset.image, button.dataset.title, button.dataset.domain);
+  openLightbox(categories.find(item => item.image === button.dataset.image), button.dataset.image, button.dataset.title, button.dataset.domain, button.dataset.copy);
 }));
 document.querySelector("#lightbox-close").addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", event => { if (event.target === lightbox) closeLightbox(); });
@@ -107,11 +128,11 @@ const reasonPanel = document.querySelector("#reason-panel");
 function renderReason(mode) {
   reasonPanel.innerHTML = mode === "human" ? `
     <span class="reason-source">HUMAN / VERIFIED CUES</span>
-    <article><span>01 · COMMONSENSE</span><h3>The temperature range is ordered incorrectly.</h3><p>“−12°C to −20°C” violates normal weather-reporting conventions and is localized in the broadcast caption.</p></article>
-    <article><span>02 · COMMONSENSE</span><h3>Harbin would not have a strong cold-air outbreak in July.</h3><p>The date and the depicted blizzard form a quiet temporal contradiction that cannot be detected from texture alone.</p></article>` : `
+    <article><span>01 · COMMONSENSE</span><h3>The crash logic of the Car is incomplete.</h3><p>Only the car's front is severely damaged while the rest remains intact, and no collision object is visible.</p></article>
+    <article><span>02 · PHYSICS</span><h3>The streetlight is missing its lower support.</h3><p>Its lower section disappears, leaving the pole seemingly suspended without a normal support base.</p></article>` : `
     <span class="reason-source">VLM / GENERATED RATIONALE</span>
-    <article><span>MODEL OBSERVATION</span><h3>The date and heavy blizzard appear implausible.</h3><p>The model correctly reaches the AI-generated verdict and notices several broad anomalies.</p></article>
-    <article class="missed"><span>MISSED / UNDER-SPECIFIED</span><h3>Only part of the human evidence is covered.</h3><p>Across SafeIMG, model rationales cover just 29.8% of human-annotated artifacts on average.</p></article>`;
+    <article><span>MODEL OBSERVATION</span><h3>The broadcast appears visually consistent with a real Boston news.</h3><p>The model emphasizes the aligned news graphics, recognizable location, police uniforms, and plausible vehicle damage.</p></article>
+    <article class="missed"><span>MISSED / UNDER-SPECIFIED</span><h3>The model overlooks the scene's causal and physical contradictions.</h3><p>It misses the incomplete crash logic, the unsupported streetlight, and the crowd response that conflicts with police already being present.</p></article>`;
 }
 
 document.querySelector(".mode-switch").addEventListener("click", event => {
